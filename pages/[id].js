@@ -10,7 +10,9 @@ export default function PostComponent({ post }) {
   }
   return (
     <div>
-      <Markdown children={post.content} />
+      <Markdown>
+        {post.content}
+      </Markdown>
     </div>
   );
 }
