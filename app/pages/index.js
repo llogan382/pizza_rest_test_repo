@@ -21,6 +21,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1>Posts</h1>
+      <h2>Here is my Restaurant</h2>
       {console.log(posts)}
       {posts.map((post) => (
         // eslint-disable-next-line react/jsx-key
