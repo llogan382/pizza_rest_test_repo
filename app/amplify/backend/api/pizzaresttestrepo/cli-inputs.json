@@ -3,7 +3,7 @@
   "serviceConfiguration": {
     "apiName": "pizzaresttestrepo",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-aadb1acd-7f24-473e-9af9-4590d7f28b98/amplify/backend/api/pizzaresttestrepo/schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-022a38fd-8426-482b-94cb-8c81fc2e4038/amplify/backend/api/pizzaresttestrepo/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "keyDescription": "api key description",

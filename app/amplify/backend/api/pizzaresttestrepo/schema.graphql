@@ -2,9 +2,10 @@ type Customer @model @auth(rules: [{allow: public}]) {
   id: ID!
   firstName: String
   lastName: String
-  phone: Int
+  phone: AWSPhone
   address: String
   city: String
   state: String
-  zip: Int
+  zip: String
 }
+ 
