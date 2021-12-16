@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 export default function PostComponent({ customer }) {
   const router = useRouter();
 
-  const zipcodeAsString = customer.zipcode.toString();
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
@@ -18,7 +17,6 @@ export default function PostComponent({ customer }) {
       <Markdown>{customer.phoneNumber}</Markdown>
       <Markdown>{customer.address}</Markdown>
       <Markdown>{customer.city}</Markdown>
-<Markdown>{zipcodeAsString}</Markdown>
       <Markdown>{customer.state}</Markdown>
     </div>
   );
