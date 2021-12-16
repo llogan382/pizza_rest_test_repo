@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Customer } from "../src/models";
 
 export default function Home() {
-  const [posts, setPosts] = useState([]);
+  const [customers, setPosts] = useState([]);
 
   useEffect(() => {
     async function fetchPosts() {
@@ -22,13 +22,13 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>Posts</h1>
-      {console.log(posts)}
+      <h1>Pizza Restaurant</h1>
+<h2>These are my customers:</h2>
 
-      {posts.map((post) => (
-        <Link key={post.id} href={`/posts/${post.id}`}>
+      {customers.map((customer) => (
+        <Link key={customer.id} href={`/posts/${customer.id}`}>
           <a>
-            <h2>{post.title}</h2>
+            <h2>{customer.firstName}</h2>
           </a>
         </Link>
       ))}
