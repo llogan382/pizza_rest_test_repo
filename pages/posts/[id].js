@@ -11,7 +11,6 @@ export default function PostComponent({ customer }) {
   }
   return (
     <div>
-      {console.log(customer.zipcode)}
       <Markdown>{customer.firstName}</Markdown>
       <Markdown>{customer.lastName}</Markdown>
       <Markdown>{customer.phoneNumber}</Markdown>
