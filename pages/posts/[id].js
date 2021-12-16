@@ -1,24 +1,24 @@
 import { withSSRContext } from "aws-amplify";
-import { Post } from "../../src/models";
+import { Customer } from "../../src/models";
 import Markdown from "react-markdown";
 import { useRouter } from "next/router";
 
-export default function PostComponent({ post }) {
+export default function PostComponent({ customer }) {
   const router = useRouter();
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
   return (
     <div>
-      <Markdown >{post.content}</Markdown>
+      <Markdown >{customer.firstName}</Markdown>
     </div>
   );
 }
 
 export async function getStaticPaths(req) {
   const { DataStore } = withSSRContext(req);
-  const posts = await DataStore.query(Post);
-  const paths = posts.map((post) => ({ params: { id: post.id } }));
+  const customers = await DataStore.query(Customer);
+  const paths = customers.map((customer) => ({ params: { id: customer.id } }));
   return {
     paths,
     fallback: true,
@@ -29,11 +29,11 @@ export async function getStaticProps(req) {
   const { DataStore } = withSSRContext(req);
   const { params } = req;
   const { id } = params;
-  const post = await DataStore.query(Post, id);
+  const customer = await DataStore.query(Customer, id);
 
   return {
     props: {
-      post: JSON.parse(JSON.stringify(post)),
+      customer: JSON.parse(JSON.stringify(customer)),
     },
     revalidate: 1,
   };
