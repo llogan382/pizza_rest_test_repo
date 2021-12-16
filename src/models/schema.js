@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Post": {
-            "name": "Post",
+        "Customer": {
+            "name": "Customer",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,39 +10,58 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "title": {
-                    "name": "title",
+                "firstName": {
+                    "name": "firstName",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "content": {
-                    "name": "content",
+                "lastName": {
+                    "name": "lastName",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "createdAt": {
-                    "name": "createdAt",
+                "phoneNumber": {
+                    "name": "phoneNumber",
                     "isArray": false,
-                    "type": "AWSDateTime",
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
+                    "attributes": []
                 },
-                "updatedAt": {
-                    "name": "updatedAt",
+                "address": {
+                    "name": "address",
                     "isArray": false,
-                    "type": "AWSDateTime",
+                    "type": "String",
                     "isRequired": false,
-                    "attributes": [],
-                    "isReadOnly": true
+                    "attributes": []
+                },
+                "city": {
+                    "name": "city",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "state": {
+                    "name": "state",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "zipcode": {
+                    "name": "zipcode",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "Posts",
+            "pluralName": "Customers",
             "attributes": [
                 {
                     "type": "model",
@@ -69,5 +88,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "ef9b651791d1d68ed7fe60bc76c24b25"
+    "version": "b3708015b4c6aa00a1bd863ee20e641a"
 };

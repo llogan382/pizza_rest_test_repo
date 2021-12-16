@@ -1,0 +1,10 @@
+type Customer @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String
+  lastName: String
+  phoneNumber: String
+  address: String
+  city: String
+  state: String
+  zipcode: Int
+}

@@ -2,19 +2,21 @@ import styles from "../styles/Home.module.css";
 import { DataStore } from "aws-amplify";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Post } from "../src/models";
+import { Customer } from "../src/models";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     async function fetchPosts() {
-      const postData = await DataStore.query(Post);
+      const postData = await DataStore.query(Customer);
       setPosts(postData);
     }
     fetchPosts();
 
-    const subscription = DataStore.observe(Post).subscribe(() => fetchPosts());
+    const subscription = DataStore.observe(Customer).subscribe(() =>
+      fetchPosts()
+    );
     return () => subscription.unsubscribe();
   }, []);
 

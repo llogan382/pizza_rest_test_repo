@@ -1,0 +1,19 @@
+version: 1.1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - nvm install 16.13.1
+        - nvm use $VERSION_NODE_16
+        - npm install
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+  appRoot: dynamic-routing
